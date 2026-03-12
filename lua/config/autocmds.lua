@@ -8,11 +8,10 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
-
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
-print('eduardo')
+print("eduardo")
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
@@ -30,7 +29,7 @@ vim.opt.backupskip = { "/tmp/*", "/private/tmp/*" }
 vim.opt.inccommand = "split"
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
-vim.opt.wrap = false          -- No Wrap lines
+vim.opt.wrap = false -- No Wrap lines
 vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.path:append({ "**" }) -- Finding files - Search down into subfolders
 ---vim.opt.wildignore:append({ "*/node_modules/*" })
@@ -107,9 +106,17 @@ vim.cmd([[
 ]])
 
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = { "json", "jsonc" },
-	callback = function()
-		vim.wo.spell = false
-		vim.wo.conceallevel = 0
-	end,
+  pattern = { "json", "jsonc" },
+  callback = function()
+    vim.wo.spell = false
+    vim.wo.conceallevel = 0
+  end,
 })
+
+vim.opt.guicursor = {
+  "n-v-c:block", -- Block in Normal, Visual, Command
+  "i-ci-ve:ver25", -- Vertical bar in Insert
+  "r-cr:hor20", -- Horizontal bar in Replace
+  "o:hor50", -- Operator-pending
+  "a:blinkon400-blinkoff400", -- Enable 400ms blink for ALL the above
+}
