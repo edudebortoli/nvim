@@ -29,7 +29,7 @@ vim.opt.backupskip = { "/tmp/*", "/private/tmp/*" }
 vim.opt.inccommand = "split"
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
-vim.opt.wrap = false -- No Wrap lines
+vim.opt.wrap = false          -- No Wrap lines
 vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.path:append({ "**" }) -- Finding files - Search down into subfolders
 ---vim.opt.wildignore:append({ "*/node_modules/*" })
@@ -47,7 +47,7 @@ vim.opt.background = "dark"
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.mouse = "a"
@@ -106,17 +106,19 @@ vim.cmd([[
 ]])
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "json", "jsonc" },
-  callback = function()
-    vim.wo.spell = false
-    vim.wo.conceallevel = 0
-  end,
+	pattern = { "json", "jsonc" },
+	callback = function()
+		vim.wo.spell = false
+		vim.wo.conceallevel = 0
+	end,
 })
 
+vim.g.python3_host_prog = vim.fn.expand('~/.local/share/nvim/venv/bin/python3')
+
 vim.opt.guicursor = {
-  "n-v-c:block", -- Block in Normal, Visual, Command
-  "i-ci-ve:ver25", -- Vertical bar in Insert
-  "r-cr:hor20", -- Horizontal bar in Replace
-  "o:hor50", -- Operator-pending
-  "a:blinkon400-blinkoff400", -- Enable 400ms blink for ALL the above
+	"n-v-c:block",             -- Block in Normal, Visual, Command
+	"i-ci-ve:ver25",           -- Vertical bar in Insert
+	"r-cr:hor20",              -- Horizontal bar in Replace
+	"o:hor50",                 -- Operator-pending
+	"a:blinkon400-blinkoff400", -- Enable 400ms blink for ALL the above
 }

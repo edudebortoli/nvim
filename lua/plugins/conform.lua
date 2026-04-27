@@ -12,6 +12,11 @@ return {
 			javascriptreact = { "prettier" },
 			typescriptreact = { "prettier" },
 		},
+		formatters = {
+			prettier = {
+				prepend_args = { "--no-semi" },
+			},
+		},
 		format_on_save = {
 			timeout_ms = 3000,
 			lsp_fallback = true,
