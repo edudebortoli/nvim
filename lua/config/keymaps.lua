@@ -4,8 +4,6 @@
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
 
-vim.g.mapleader = " "
-
 -- Delete without yank
 keymap.set("n", "x", '"_x')
 
@@ -18,7 +16,7 @@ keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 --keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Go to normal mode in terminal and jj
-keymap.set("t", "<Esc>", "<C-\\><C-n><CR>")
+keymap.set("t", "<Esc>", "<C-\\><C-n>")
 vim.keymap.set("i", "jj", "<Esc>")
 
 -- Clear search

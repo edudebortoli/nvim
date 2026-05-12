@@ -1,4 +1,4 @@
-_G.open_env_file = function()
+local function open_env_file()
 	local project_root = vim.fn.getcwd()
 	local env_js_path = project_root .. "/src/assets/env.js"
 	local env_file_path = project_root .. "/.env"
@@ -16,4 +16,4 @@ _G.open_env_file = function()
 	vim.notify("Neither src/assets/env.js nor .env file found in the project.", vim.log.levels.WARN)
 end
 
-vim.api.nvim_set_keymap("n", "<C-t>", ":lua open_env_file()<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-t>", open_env_file, { noremap = true, silent = true })

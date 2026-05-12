@@ -11,7 +11,6 @@
 -- Options are automatically loaded before lazy.nvim startup
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
-print("eduardo")
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
@@ -53,7 +52,7 @@ vim.opt.relativenumber = true
 vim.opt.mouse = "a"
 
 -- Don't show the mode, since it's already in the status line
-vim.opt.showmode = true
+vim.opt.showmode = false
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
@@ -78,12 +77,6 @@ vim.opt.splitbelow = true
 --  and `:help 'listchars'`
 vim.opt.list = false
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-
--- Preview substitutions live, as you type!
-vim.opt.inccommand = "split"
-
--- Show which line your cursor is on
-vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
