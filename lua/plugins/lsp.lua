@@ -4,9 +4,9 @@ return {
 		"mason-org/mason-lspconfig.nvim",
 		dependencies = { "neovim/nvim-lspconfig" },
 		opts = {
-			ensure_installed = { "lua_ls", "eslint", "html" },
-			automatic_install = true,
-			handlers = {
+		    ensure_installed = { "lua_ls", "eslint", "html", "ts_ls" },
+		    automatic_install = true,
+		    handlers = {
 				function(server_name)
 					require("lspconfig")[server_name].setup({})
 				end,

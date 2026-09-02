@@ -31,7 +31,7 @@ vim.opt.tabstop = 2
 vim.opt.wrap = false          -- No Wrap lines
 vim.opt.backspace = { "start", "eol", "indent" }
 vim.opt.path:append({ "**" }) -- Finding files - Search down into subfolders
----vim.opt.wildignore:append({ "*/node_modules/*" })
+vim.opt.wildignore:append({ "*/node_modules/*", "*/.git/*", "*/dist/*", "*/build/*" })
 
 -- Add asterisks in block comments
 vim.opt.formatoptions:append({ "r" })
